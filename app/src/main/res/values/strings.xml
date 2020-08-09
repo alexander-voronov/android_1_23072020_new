@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">A1L1_New</string>
+    <string name="your_city">Your city:</string>
+    <string name="button_city_selection">city selection</string>
+    <string name="window_city">city</string>
+    <string name="temperature">Temperature:</string>
+    <string name="temperature_value">value</string>
 </resources>
