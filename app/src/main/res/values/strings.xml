@@ -1,8 +1,13 @@
 <resources>
-    <string name="app_name">A1L1_New</string>
+    <string name="app_name" translatable="false">A1L1_New</string>
     <string name="your_city">Your city:</string>
     <string name="button_city_selection">city selection</string>
     <string name="window_city">city</string>
     <string name="temperature">Temperature:</string>
     <string name="temperature_value">value</string>
+    <string name="inscription_choose_a_city">Choose a City</string>
+    <string name="city_name_moscow">Moscow</string>
+    <string name="city_name_new_york">New York</string>
+    <string name="city_name_london">London</string>
+    <string name="city_name_canberra">Canberra</string>
 </resources>

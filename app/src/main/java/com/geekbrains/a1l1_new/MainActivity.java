@@ -1,18 +1,22 @@
 package com.geekbrains.a1l1_new;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
 
+    private TextView textView2;
+    final static String dataKey = "dataKey";
     private TextView counterTextView;
     private Button randomCounterBtn;
     private final String counterDataKey = "counterDataKey";
@@ -23,7 +27,16 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Log.d(TAG, "onCreate");
+        findViewById(R.id.button_city_selection).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, MainActivity2.class);
+                startActivity(intent);
+
+            }
+        });
         findViews();
+        showDataFromSecondActivity();
         setOnClickBehaviourToBtn();
         Toast.makeText(this, "onCreate", Toast.LENGTH_SHORT).show();
     }
@@ -85,6 +98,8 @@ public class MainActivity extends AppCompatActivity {
     private void findViews() {
         counterTextView = findViewById(R.id.containerTextView);
         randomCounterBtn = findViewById(R.id.randomCounterBtn);
+        textView2 = findViewById(R.id.textView2);
+
     }
 
     private void setOnClickBehaviourToBtn() {
@@ -98,5 +113,11 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
+    private void showDataFromSecondActivity() {
+        String data = getIntent().getStringExtra(MainActivity2.dataKey);
+        textView2.setText(data);
+    }
+
 
 }
